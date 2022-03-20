@@ -1,0 +1,42 @@
+@import "../variables";
+
+.categories {
+	ul {
+		display: none;
+		top: 0;
+		left: 0;
+		width: 100%;
+		position: absolute;
+		flex-direction: column;
+		background-color: rgba(255, 255, 255, 0.7);
+		padding: 40px;
+		@media (max-width: 554px) {
+			padding: 40px 10px;
+		}
+
+		li {
+			border: 1px solid black;
+			background-color: #f9f9f9;
+			padding: 13px 30px;
+			border-radius: 30px;
+			margin-top: 10px;
+			font-weight: bold;
+			cursor: pointer;
+			transition: background-color 0.1s ease-in-out;
+			@include noselect();
+
+			&:hover {
+				background-color: darken(#f9f9f9, 2%);
+			}
+
+			&:active {
+				background-color: darken(#f9f9f9, 5%);
+			}
+
+			&.active {
+				background-color: #282828;
+				color: #fff;
+			}
+		}
+	}
+}
