@@ -4,17 +4,14 @@ const MainView = () => {
 	return (
 		<div className="content">
 			<div className="container">
-				<div className="content__top">
-					<div className="categories">
-						<ul>
-							<li className="active">Все</li>
-							<li>Піци</li>
-							<li>Напої</li>
-							<li>Десерти</li>
-						</ul>
-					</div>
+				<div className="categories">
+					<ul>
+						<li className="active">Все</li>
+						<li>Піци</li>
+						<li>Напої</li>
+						<li>Десерти</li>
+					</ul>
 				</div>
-				<h2 className="content__title">Всі піци</h2>
 				<div className="content__items">
 					<div className="pizza-block">
 						<img
@@ -23,16 +20,11 @@ const MainView = () => {
 							alt="Pizza"
 						/>
 						<h4 className="pizza-block__title">Чизбургер-піца</h4>
-						<div className="pizza-block__selector">
-							<ul>
-								<li className="active">тонкое</li>
-								<li>традиционное</li>
-							</ul>
-							<ul>
-								<li className="active">26 см.</li>
-								<li>30 см.</li>
-								<li>40 см.</li>
-							</ul>
+						<div className='pizza-block__description'>
+							<div className='pizza-block__arrow active'><span>Детально</span></div>
+							<p className='pizza-block__description-text'>
+								Lorem ipsum dolor, sloribus unde magni labore! Dolores laudantium labore quibusdam sed.
+							</p>
 						</div>
 						<div className="pizza-block__bottom">
 							<div className="pizza-block__price">395 ₴</div>
