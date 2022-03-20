@@ -136,21 +136,36 @@
 		padding: 12px 25px;
 
 		@media (max-width: 554px) {
-			padding: 8px 18px;
+			padding: 6px 12px;
 		}
 
 		svg {
 			margin-right: 8px;
 			margin-bottom: 1px;
+			@media (max-width: 554px) {
+				margin-right: 4px;
+				margin-bottom: 1px;
+			}
 		}
 
 		span {
 			font-weight: 600;
 			font-size: 16px;
-
 			@media (max-width: 554px) {
-				font-size: 14px;
 				font-weight: 400;
+				font-size: 14px;
+			}
+		}
+
+		.cart__text {
+			@media (max-width: 554px) {
+				display: none;
+			}
+		}
+
+		.button__delimiter {
+			@media (max-width: 554px) {
+				display: none;
 			}
 		}
 	}

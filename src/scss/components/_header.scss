@@ -1,48 +1,51 @@
 @import "../variables";
 
 .header {
-	border-bottom: 1px solid $gray-line;
 	padding: 40px 0 0 0;
 
 	.container {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		@media (max-width: 768px) {
-			flex-direction: column;
-		}
 	}
 
 	&__buttons {
 		display: flex;
 		align-items: center;
-		gap: 10px;
-
-		@media (max-width: 768px) {
-			margin-top: 30px;
-		}
 	}
 
 	&__logo {
 		display: flex;
-		@media (min-width: 767px) {
-			margin-right: 20px;
-		}
 
 		img {
-			margin-right: 15px;
+			margin-right: 16px;
+			@media (max-width: 554px) {
+				margin-right: 8px;
+			}
 		}
 
 		h1 {
 			color: #181818;
 			font-size: 24px;
 			letter-spacing: 1%;
-			text-transform: uppercase;
 			font-weight: 800;
+			@media (max-width: 767px) {
+				font-size: 22px;
+			}
+			@media (max-width: 554px) {
+				font-size: 18px;
+			}
 		}
 
 		p {
 			color: #7b7b7b;
+			font-size: 16px;
+			@media (max-width: 767px) {
+				font-size: 15px;
+			}
+			@media (max-width: 554px) {
+				font-size: 12px;
+			}
 		}
 	}
 }
