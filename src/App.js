@@ -1,10 +1,15 @@
 import React from 'react';
+import MainView from './pages/MainView';
+import CartView from './pages/CartView';
+import EmptyCart from './components/cartView/EmptyCart';
 import './scss/App.css';
 
 function App() {
 	return (
-		<div className="App">
-			Helo World
+		<div className="wrapper">
+			<MainView />
+			<CartView />
+			<EmptyCart />
 		</div>
 	);
 }
