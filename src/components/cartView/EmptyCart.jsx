@@ -1,4 +1,5 @@
 import React from 'react';
+import emptyCart from '../../img/empty-cart.png';
 
 const EmptyCart = () => {
 	return (
@@ -10,7 +11,7 @@ const EmptyCart = () => {
 						Вероятней всего, вы не заказывали ещё пиццу.<br />
 						Для того, чтобы заказать пиццу, перейди на главную страницу.
 					</p>
-					<img src='../../img/empty-cart.png' alt='Корзина порожня' />
+					<img src={emptyCart} alt='Корзина порожня' />
 					<a href="/" className="button button--black">
 						<span>Вернуться назад</span>
 					</a>
