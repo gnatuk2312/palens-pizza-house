@@ -8,15 +8,13 @@ const MainView = () => {
 					<div className="categories">
 						<ul>
 							<li className="active">Все</li>
-							<li>Мясные</li>
-							<li>Вегетарианская</li>
-							<li>Гриль</li>
-							<li>Острые</li>
-							<li>Закрытые</li>
+							<li>Піци</li>
+							<li>Напої</li>
+							<li>Десерти</li>
 						</ul>
 					</div>
 				</div>
-				<h2 className="content__title">Все пиццы</h2>
+				<h2 className="content__title">Всі піци</h2>
 				<div className="content__items">
 					<div className="pizza-block">
 						<img
@@ -24,7 +22,7 @@ const MainView = () => {
 							src="https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg"
 							alt="Pizza"
 						/>
-						<h4 className="pizza-block__title">Чизбургер-пицца</h4>
+						<h4 className="pizza-block__title">Чизбургер-піца</h4>
 						<div className="pizza-block__selector">
 							<ul>
 								<li className="active">тонкое</li>
@@ -37,7 +35,7 @@ const MainView = () => {
 							</ul>
 						</div>
 						<div className="pizza-block__bottom">
-							<div className="pizza-block__price">от 395 ₽</div>
+							<div className="pizza-block__price">395 ₴</div>
 							<div className="button button--outline button--add">
 								<svg
 									width="12"
@@ -51,8 +49,8 @@ const MainView = () => {
 										fill="white"
 									/>
 								</svg>
-								<span>Добавить</span>
-								<i>2</i>
+								<span>Добавити</span>
+								<i>0</i>
 							</div>
 						</div>
 					</div>

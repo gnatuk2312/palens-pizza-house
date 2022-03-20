@@ -20,7 +20,7 @@ const CartView = () => {
 								<path d="M11.6666 9.16667V14.1667" stroke="#B6B6B6" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
 							</svg>
 
-							<span>Очистить корзину</span>
+							<span>Очистити корзину</span>
 						</div>
 					</div>
 					<div className="content__items">
@@ -33,8 +33,7 @@ const CartView = () => {
 								/>
 							</div>
 							<div className="cart__item-info">
-								<h3>Сырный цыпленок</h3>
-								<p>тонкое тесто, 26 см.</p>
+								<h3>Чотири сири</h3>
 							</div>
 							<div className="cart__item-count">
 								<div className="button button--outline button--circle cart__item-count-minus">
@@ -54,7 +53,7 @@ const CartView = () => {
 								</div>
 							</div>
 							<div className="cart__item-price">
-								<b>770 ₽</b>
+								<b>770 ₴</b>
 							</div>
 							<div className="cart__item-remove">
 								<div className="button button--outline button--circle">
@@ -69,8 +68,8 @@ const CartView = () => {
 					</div>
 					<div className="cart__bottom">
 						<div className="cart__bottom-details">
-							<span> Всего пицц: <b>3 шт.</b> </span>
-							<span> Сумма заказа: <b>900 ₽</b> </span>
+							<span> Всього: <b>2 шт.</b> </span>
+							<span> Сумма замовлення: <b>770 ₴</b> </span>
 						</div>
 						<div className="cart__bottom-buttons">
 							<a href="/" className="button button--outline button--add go-back-btn">
@@ -78,10 +77,10 @@ const CartView = () => {
 									<path d="M7 13L1 6.93015L6.86175 1" stroke="#D3D3D3" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
 								</svg>
 
-								<span>Вернуться назад</span>
+								<span>На головну</span>
 							</a>
 							<div className="button pay-btn">
-								<span>Оплатить сейчас</span>
+								<span>Оплатити</span>
 							</div>
 						</div>
 					</div>
