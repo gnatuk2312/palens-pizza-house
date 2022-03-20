@@ -8,8 +8,8 @@ const Header = () => {
 				<a href='/' className="header__logo">
 					<img width="38" src={logo} alt="Pizza logo" />
 					<div>
-						<h1>React Pizza</h1>
-						<p>самая вкусная пицца во вселенной</p>
+						<h1>Palen`s PizzaHouse</h1>
+						<p>найсмачніша піца у Всесвіті</p>
 					</div>
 				</a>
 				<div className='header__buttons'>
