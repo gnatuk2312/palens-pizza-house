@@ -49,11 +49,6 @@ const Header = () => {
 							<span>0</span>
 						</a>
 					</div>
-					<div className='filter__button'>
-						<button className='button button--cart button--black'>
-							<span>Фільтри</span>
-						</button>
-					</div>
 				</div>
 			</div>
 		</header>

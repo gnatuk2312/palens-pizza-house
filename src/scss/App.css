@@ -78,7 +78,6 @@ a {
 }
 
 .header {
-  border-bottom: 1px solid #f6f6f6;
   padding: 40px 0 0 0;
 }
 
@@ -94,15 +93,6 @@ a {
           justify-content: space-between;
 }
 
-@media (max-width: 768px) {
-  .header .container {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-}
-
 .header__buttons {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -110,13 +100,6 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 10px;
-}
-
-@media (max-width: 768px) {
-  .header__buttons {
-    margin-top: 30px;
-  }
 }
 
 .header__logo {
@@ -125,26 +108,50 @@ a {
   display: flex;
 }
 
-@media (min-width: 767px) {
-  .header__logo {
-    margin-right: 20px;
-  }
+.header__logo img {
+  margin-right: 16px;
 }
 
-.header__logo img {
-  margin-right: 15px;
+@media (max-width: 554px) {
+  .header__logo img {
+    margin-right: 8px;
+  }
 }
 
 .header__logo h1 {
   color: #181818;
   font-size: 24px;
   letter-spacing: 1%;
-  text-transform: uppercase;
   font-weight: 800;
+}
+
+@media (max-width: 767px) {
+  .header__logo h1 {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 554px) {
+  .header__logo h1 {
+    font-size: 18px;
+  }
 }
 
 .header__logo p {
   color: #7b7b7b;
+  font-size: 16px;
+}
+
+@media (max-width: 767px) {
+  .header__logo p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 554px) {
+  .header__logo p {
+    font-size: 12px;
+  }
 }
 
 .button {
@@ -301,13 +308,20 @@ a {
 
 @media (max-width: 554px) {
   .button--cart {
-    padding: 8px 18px;
+    padding: 6px 12px;
   }
 }
 
 .button--cart svg {
   margin-right: 8px;
   margin-bottom: 1px;
+}
+
+@media (max-width: 554px) {
+  .button--cart svg {
+    margin-right: 4px;
+    margin-bottom: 1px;
+  }
 }
 
 .button--cart span {
@@ -317,8 +331,20 @@ a {
 
 @media (max-width: 554px) {
   .button--cart span {
-    font-size: 14px;
     font-weight: 400;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 554px) {
+  .button--cart .cart__text {
+    display: none;
+  }
+}
+
+@media (max-width: 554px) {
+  .button--cart .button__delimiter {
+    display: none;
   }
 }
 
