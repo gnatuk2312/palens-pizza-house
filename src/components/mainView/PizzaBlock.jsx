@@ -1,6 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 
 const PizzaBlock = () => {
+
+	const [openedDescription, setOpenedDescription] = useState(false);
+
+	const bindDescription = () => {
+		setOpenedDescription(!openedDescription);
+	};
+
 	return (
 		<div className="pizza-block">
 			<div>
@@ -11,10 +18,14 @@ const PizzaBlock = () => {
 				/>
 				<h4 className="pizza-block__title">Чизбургер-піца</h4>
 				<div className='pizza-block__description'>
-					<div className='pizza-block__arrow active'><span>Детально</span></div>
-					<p className='pizza-block__description-text'>
+					<div
+						onClick={bindDescription}
+						className={openedDescription ? "pizza-block__arrow active" : "pizza-block__arrow"}>
+						<span>Детально</span>
+					</div>
+					{openedDescription && <p className='pizza-block__description-text'>
 						Lorem ipsum dolor, sloribus unde magni labore! Dolores laudantium labore quibusdam sed.
-					</p>
+					</p>}
 				</div>
 			</div>
 			<div className="pizza-block__bottom">
