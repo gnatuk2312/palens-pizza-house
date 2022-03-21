@@ -1,0 +1,24 @@
+.footer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 40px 10px;
+}
+.copyright {
+	font-size: 18px;
+	letter-spacing: 1.1px;
+}
+.social {
+	display: flex;
+	li {
+		&:not(:last-child) {
+			margin-right: 20px;
+		}
+	}
+}
+.number {
+	margin: 10px 0px 20px 0px;
+	font-size: 18px;
+	text-decoration: underline;
+}

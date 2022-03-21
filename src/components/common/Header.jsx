@@ -1,6 +1,6 @@
 import React from 'react';
-import CartButton from './mainView/CartButton';
-import logo from '../img/svg/pizza-logo.svg'
+import CartButton from '../mainView/CartButton';
+import logo from '../../img/svg/pizza-logo.svg'
 
 const Header = () => {
 	return (
