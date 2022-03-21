@@ -1,9 +1,10 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const CartButton = () => {
 	return (
 		<div className="header__cart">
-			<a href="/cart" className="button button--cart">
+			<NavLink to="/cart" className="button button--cart">
 				<span className='cart__text'>Корзина</span>
 				<div className="button__delimiter"></div>
 				<svg
@@ -36,7 +37,7 @@ const CartButton = () => {
 					/>
 				</svg>
 				<span>0</span>
-			</a>
+			</NavLink>
 		</div>
 	);
 };

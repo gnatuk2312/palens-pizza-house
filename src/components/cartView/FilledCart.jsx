@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from "react-router-dom";
 import CartItem from './CartItem';
 
 const FilledCart = () => {
@@ -32,12 +33,12 @@ const FilledCart = () => {
 							<span> Сумма замовлення: <b>770 ₴</b> </span>
 						</div>
 						<div className="cart__bottom-buttons">
-							<a href="/" className="button button--outline button--add go-back-btn">
+							<NavLink to="/" className="button button--outline button--add go-back-btn">
 								<svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path d="M7 13L1 6.93015L6.86175 1" stroke="#D3D3D3" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
 								</svg>
 								<span>На головну</span>
-							</a>
+							</NavLink>
 							<button className="button pay-btn">
 								<span>Оплатити</span>
 							</button>
