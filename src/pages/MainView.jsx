@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import PizzaBlock from '../components/mainView/PizzaBlock';
 
 const MainView = () => {
+
+	const pizzas = useSelector(state => {
+		return state.pizza.pizzas;
+	});
 
 	const [activeClass, setActiveClass] = useState(null);
 
@@ -29,16 +34,9 @@ const MainView = () => {
 					</ul>
 				</div>
 				<div className="content__items">
-					<PizzaBlock />
-					<PizzaBlock />
-					<PizzaBlock />
-					<PizzaBlock />
-					<PizzaBlock />
-					<PizzaBlock />
-					<PizzaBlock />
-					<PizzaBlock />
-					<PizzaBlock />
-					<PizzaBlock />
+					{pizzas.map(item => {
+						return (<PizzaBlock key={item.id} pizza={item} />)
+					})}
 				</div>
 			</div>
 		</div>
