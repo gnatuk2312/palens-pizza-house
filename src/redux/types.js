@@ -1,0 +1,1 @@
+export const LOAD_ALL_PIZZAS = "LOAD_ALL_PIZZAS";
