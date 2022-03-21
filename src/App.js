@@ -1,7 +1,6 @@
 import React from 'react';
 import MainView from './pages/MainView';
 import CartView from './pages/CartView';
-import EmptyCart from './components/cartView/EmptyCart';
 import Header from './components/Header';
 import './scss/App.css';
 
@@ -11,7 +10,6 @@ function App() {
 			<Header />
 			<MainView />
 			<CartView />
-			<EmptyCart />
 		</div>
 	);
 }
