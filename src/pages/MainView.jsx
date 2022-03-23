@@ -8,6 +8,10 @@ const MainView = () => {
 		return state.pizza.pizzas;
 	});
 
+	const amount = useSelector(state => {
+		return state.cart.amount;
+	});
+
 	//Для перевірки що в нас є в state (потім видалити)
 	const state = useSelector(state => {
 		return state;
@@ -41,7 +45,7 @@ const MainView = () => {
 				</div>
 				<div className="content__items">
 					{pizzas.map(item => {
-						return (<PizzaBlock key={item.id} pizza={item} />)
+						return (<PizzaBlock key={item.id} pizza={item} amount={amount} />)
 					})}
 				</div>
 			</div>
