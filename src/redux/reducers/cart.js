@@ -1,4 +1,4 @@
-import { ADD_TO_CART } from "../types";
+import { ADD_TO_CART, CLEAR_CART } from "../types";
 
 
 const initialState = {
@@ -13,6 +13,12 @@ export const cart = (state = initialState, action) => {
 			return {
 				...state,
 				order: [action.payload, ...state.order]
+			}
+
+		case CLEAR_CART:
+			return {
+				...state,
+				order: []
 			}
 
 		default:
