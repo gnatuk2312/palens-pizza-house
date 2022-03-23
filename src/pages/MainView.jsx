@@ -8,6 +8,12 @@ const MainView = () => {
 		return state.pizza.pizzas;
 	});
 
+	//Для перевірки що в нас є в state (потім видалити)
+	const state = useSelector(state => {
+		return state;
+	});
+	console.log("state >>", state);
+
 	const [activeClass, setActiveClass] = useState(null);
 
 	const filters = ['Піци', 'Напої', 'Десерти'];
