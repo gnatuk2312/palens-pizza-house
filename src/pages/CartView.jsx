@@ -12,8 +12,7 @@ const CartView = () => {
 
 	return (
 		<>
-			<FilledCart order={order} />
-			<EmptyCart />
+			{order.length ? <FilledCart order={order} /> : <EmptyCart />}
 		</>
 	);
 };
