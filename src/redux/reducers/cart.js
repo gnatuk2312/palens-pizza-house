@@ -1,4 +1,4 @@
-import { ADD_TO_CART, CLEAR_CART, DELETE_ITEM_FROM_CART } from "../types";
+import { ADD_TO_CART, CLEAR_CART, DECREMENT_AMOUNT, DELETE_ITEM_FROM_CART, INCREMENT_AMOUNT } from "../types";
 
 
 const initialState = {
@@ -44,6 +44,36 @@ export const cart = (state = initialState, action) => {
 			return {
 				...state,
 				order: state.order.filter(item => item.id !== action.payload)
+			}
+
+		case INCREMENT_AMOUNT:
+			return {
+				...state,
+				amount: state.amount.map(obj => {
+					if (obj.id === action.payload) {
+						return {
+							id: obj.id,
+							count: obj.count + 1
+						};
+					};
+					return obj;
+				})
+			}
+
+		case DECREMENT_AMOUNT:
+			return {
+				...state,
+				amount: state.amount.map(obj => {
+					if (obj.id === action.payload) {
+						if (obj.count > 1) {
+							return {
+								id: obj.id,
+								count: obj.count - 1
+							};
+						};
+					};
+					return obj;
+				})
 			}
 
 		default:
