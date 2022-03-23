@@ -1,15 +1,20 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { clearCart } from '../../redux/actions/cart';
 import { NavLink } from "react-router-dom";
 import CartItem from './CartItem';
 
 const FilledCart = ({ order }) => {
-	const dispatch = useDispatch();
 
+	const dispatch = useDispatch();
 	const clearAllCart = () => {
 		dispatch(clearCart());
-	}
+	};
+
+	const amount = useSelector(state => {
+		return state.cart.amount;
+	});
+
 	return (
 		<div className="content">
 			<div className="container container--cart">
@@ -33,7 +38,7 @@ const FilledCart = ({ order }) => {
 					</div>
 					<div className="content__items">
 						{order.map(item => {
-							return <CartItem item={item} key={item.id} />
+							return <CartItem item={item} amount={amount} key={item.id} />
 						})}
 
 					</div>

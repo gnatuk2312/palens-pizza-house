@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/actions/cart";
 
-const PizzaBlock = ({ pizza }) => {
+const PizzaBlock = ({ pizza, amount }) => {
 
 	const [openedDescription, setOpenedDescription] = useState(false);
 	const bindDescription = () => {
@@ -10,11 +10,9 @@ const PizzaBlock = ({ pizza }) => {
 	};
 
 	const dispatch = useDispatch();
-
 	const addItemToCart = () => {
-		console.log("add to cart");
 		dispatch(addToCart(pizza))
-	}
+	};
 
 	return (
 		<div className="pizza-block">
@@ -54,7 +52,11 @@ const PizzaBlock = ({ pizza }) => {
 						/>
 					</svg>
 					<span>Добавити</span>
-					<i>0</i>
+					{amount.map(item => {
+						if (item.id === pizza.id) {
+							return <i key={item.id}>{item.count}</i>;
+						}; return null;
+					})}
 				</div>
 			</div>
 		</div>
