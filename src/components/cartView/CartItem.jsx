@@ -1,19 +1,19 @@
 import React from 'react';
 
-const CartItem = () => {
+const CartItem = ({ item }) => {
 	return (
 		<div className="cart__item">
 			<div className='cart__item-wrapper'>
 				<div className="cart__item-img">
 					<img
 						className="pizza-block__image"
-						src="https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg"
+						src={item.imageUrl}
 						alt="Pizza"
 					/>
 				</div>
 				<div className="cart__item-info">
-					<h3>Чотири сири </h3>
-					<p>Гостра</p>
+					<h3>{item.name}</h3>
+					<p>Рейтинг: {item.rating} ★</p>
 				</div>
 			</div>
 			<div className='cart__item-count_price'>
@@ -33,7 +33,7 @@ const CartItem = () => {
 					</div>
 				</div>
 				<div className="cart__item-price">
-					<b>770 ₴</b>
+					<b>{item.price} ₴</b>
 				</div>
 			</div>
 			<div className="cart__item-remove">

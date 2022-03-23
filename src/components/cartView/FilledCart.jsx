@@ -26,7 +26,10 @@ const FilledCart = ({ order }) => {
 						</button>
 					</div>
 					<div className="content__items">
-						<CartItem />
+						{order.map(item => {
+							return <CartItem item={item} key={item.id} />
+						})}
+
 					</div>
 					<div className="cart__bottom">
 						<div className="cart__bottom-details">
