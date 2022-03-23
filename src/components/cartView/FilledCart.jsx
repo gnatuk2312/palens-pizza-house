@@ -2,7 +2,8 @@ import React from 'react';
 import { NavLink } from "react-router-dom";
 import CartItem from './CartItem';
 
-const FilledCart = () => {
+const FilledCart = ({ order }) => {
+	console.log(order);
 	return (
 		<div className="content">
 			<div className="container container--cart">
