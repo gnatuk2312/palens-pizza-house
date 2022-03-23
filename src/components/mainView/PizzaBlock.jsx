@@ -1,14 +1,20 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../redux/actions/cart";
 
 const PizzaBlock = ({ pizza }) => {
 
-	console.log(pizza);
-
 	const [openedDescription, setOpenedDescription] = useState(false);
-
 	const bindDescription = () => {
 		setOpenedDescription(!openedDescription);
 	};
+
+	const dispatch = useDispatch();
+
+	const addItemToCart = () => {
+		console.log("add to cart");
+		dispatch(addToCart(pizza))
+	}
 
 	return (
 		<div className="pizza-block">
@@ -32,7 +38,9 @@ const PizzaBlock = ({ pizza }) => {
 			</div>
 			<div className="pizza-block__bottom">
 				<div className="pizza-block__price">{pizza.price} ₴</div>
-				<div className="button button--outline button--add">
+				<div
+					onClick={addItemToCart}
+					className="button button--outline button--add">
 					<svg
 						width="12"
 						height="12"
