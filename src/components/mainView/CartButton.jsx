@@ -1,7 +1,13 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 
 const CartButton = () => {
+
+	const orderLength = useSelector(state => {
+		return state.cart.order.length;
+	});
+
 	return (
 		<div className="header__cart">
 			<NavLink to="/cart" className="button button--cart">
@@ -36,7 +42,7 @@ const CartButton = () => {
 						strokeLinejoin="round"
 					/>
 				</svg>
-				<span>0</span>
+				<span>{orderLength}</span>
 			</NavLink>
 		</div>
 	);
