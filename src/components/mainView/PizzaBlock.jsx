@@ -55,7 +55,7 @@ const PizzaBlock = ({ pizza, amount }) => {
 					{amount.map(item => {
 						if (item.id === pizza.id) {
 							return <i key={item.id}>{item.count}</i>;
-						}
+						}; return null;
 					})}
 				</div>
 			</div>
