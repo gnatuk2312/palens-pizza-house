@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { clearCart } from '../../redux/actions/cart';
 import { NavLink } from "react-router-dom";
@@ -14,6 +14,22 @@ const FilledCart = ({ order }) => {
 	const amount = useSelector(state => {
 		return state.cart.amount;
 	});
+
+	const [total, setTotal] = useState(0);
+
+	const countTotal = (tot) => {
+		setTotal(tot)
+	};
+
+	useEffect(() => {
+		let tot = 0;
+		amount.forEach(obj => {
+			tot = tot + obj.count;
+			countTotal(tot);
+		})
+	}, [amount])
+
+
 
 	return (
 		<div className="content">
@@ -44,7 +60,7 @@ const FilledCart = ({ order }) => {
 					</div>
 					<div className="cart__bottom">
 						<div className="cart__bottom-details">
-							<span> Всього: <b>2 шт.</b> </span>
+							<span> Всього: <b>{total} шт.</b> </span>
 							<span> Сумма замовлення: <b>770 ₴</b> </span>
 						</div>
 						<div className="cart__bottom-buttons">
