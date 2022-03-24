@@ -37,13 +37,15 @@ export const cart = (state = initialState, action) => {
 		case CLEAR_CART:
 			return {
 				...state,
-				order: []
+				order: [],
+				amount: []
 			}
 
 		case DELETE_ITEM_FROM_CART:
 			return {
 				...state,
-				order: state.order.filter(item => item.id !== action.payload)
+				order: state.order.filter(item => item.id !== action.payload),
+				amount: state.amount.filter(item => item.id !== action.payload)
 			}
 
 		case INCREMENT_AMOUNT:
