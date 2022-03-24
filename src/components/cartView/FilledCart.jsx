@@ -16,20 +16,25 @@ const FilledCart = ({ order }) => {
 	});
 
 	const [total, setTotal] = useState(0);
+	const [bill, setBill] = useState(0);
 
 	const countTotal = (tot) => {
 		setTotal(tot)
 	};
+	const countBill = (bil) => {
+		setBill(bil)
+	};
 
 	useEffect(() => {
 		let tot = 0;
+		let bil = 0;
 		amount.forEach(obj => {
 			tot = tot + obj.count;
+			bil = bil + obj.count * obj.price;
 			countTotal(tot);
-		})
+			countBill(bil);
+		});
 	}, [amount])
-
-
 
 	return (
 		<div className="content">
@@ -61,7 +66,7 @@ const FilledCart = ({ order }) => {
 					<div className="cart__bottom">
 						<div className="cart__bottom-details">
 							<span> Всього: <b>{total} шт.</b> </span>
-							<span> Сумма замовлення: <b>770 ₴</b> </span>
+							<span> Сумма замовлення: <b>{bill} ₴</b> </span>
 						</div>
 						<div className="cart__bottom-buttons">
 							<NavLink to="/" className="button button--outline button--add go-back-btn">
