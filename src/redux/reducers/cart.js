@@ -2,8 +2,8 @@ import { ADD_TO_CART, CLEAR_CART, DECREMENT_AMOUNT, DELETE_ITEM_FROM_CART, INCRE
 
 
 const initialState = {
-	order: [],
-	amount: []
+	order: localStorage.getItem('order') ? JSON.parse(localStorage.getItem('order')) : [],
+	amount: localStorage.getItem('amount') ? JSON.parse(localStorage.getItem('amount')) : []
 }
 
 export const cart = (state = initialState, action) => {

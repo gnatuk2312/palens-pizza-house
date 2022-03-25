@@ -6,16 +6,25 @@ import Header from './components/common/Header';
 import Footer from './components/common/Footer';
 import './scss/App.css';
 
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { loadPizzas } from './redux/actions/pizza';
 
 function App() {
+
+	const store = useSelector(state => {
+		return state;
+	})
+	useEffect(() => {
+		localStorage.setItem('order', JSON.stringify(store.cart.order));
+		localStorage.setItem('amount', JSON.stringify(store.cart.amount));
+	}, [store]);
+
 
 	const dispatch = useDispatch();
 
 	useEffect(() => {
 		dispatch(loadPizzas());
-	}, [dispatch])
+	}, [dispatch]);
 
 	return (
 		<div className="wrapper">
