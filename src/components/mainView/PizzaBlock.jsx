@@ -15,7 +15,7 @@ const PizzaBlock = ({ pizza, amount }) => {
 	};
 
 	return (
-		<article className="pizza-block">
+		<div className="pizza-block">
 			<div>
 				<img
 					className="pizza-block__image"
@@ -36,7 +36,7 @@ const PizzaBlock = ({ pizza, amount }) => {
 			</div>
 			<div className="pizza-block__bottom">
 				<div className="pizza-block__price">{pizza.price} ₴</div>
-				<button
+				<div
 					onClick={addItemToCart}
 					className="button button--outline button--add">
 					<svg
@@ -57,9 +57,9 @@ const PizzaBlock = ({ pizza, amount }) => {
 							return <i key={item.id}>{item.count}</i>;
 						}; return null;
 					})}
-				</button>
+				</div>
 			</div>
-		</article>
+		</div>
 	);
 };
 export default PizzaBlock;

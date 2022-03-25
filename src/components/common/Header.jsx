@@ -13,7 +13,9 @@ const Header = () => {
 						<p>найсмачніша піца у Всесвіті</p>
 					</div>
 				</a>
-				<CartButton />
+				<div className='header__buttons'>
+					<CartButton />
+				</div>
 			</div>
 		</header>
 	);
