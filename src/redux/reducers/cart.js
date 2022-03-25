@@ -17,7 +17,7 @@ export const cart = (state = initialState, action) => {
 					amount: state.amount.map(item => {
 						if (item.id === action.payload.id) {
 							return {
-								id: item.id,
+								...item,
 								count: item.count + 1
 							}
 						} else {
@@ -29,7 +29,7 @@ export const cart = (state = initialState, action) => {
 				return {
 					...state,
 					order: [action.payload, ...state.order],
-					amount: [...state.amount, { id: action.payload.id, count: 1 }]
+					amount: [...state.amount, { id: action.payload.id, count: 1, price: action.payload.price }]
 				}
 			}
 
@@ -37,13 +37,15 @@ export const cart = (state = initialState, action) => {
 		case CLEAR_CART:
 			return {
 				...state,
-				order: []
+				order: [],
+				amount: []
 			}
 
 		case DELETE_ITEM_FROM_CART:
 			return {
 				...state,
-				order: state.order.filter(item => item.id !== action.payload)
+				order: state.order.filter(item => item.id !== action.payload),
+				amount: state.amount.filter(item => item.id !== action.payload)
 			}
 
 		case INCREMENT_AMOUNT:
@@ -52,7 +54,7 @@ export const cart = (state = initialState, action) => {
 				amount: state.amount.map(obj => {
 					if (obj.id === action.payload) {
 						return {
-							id: obj.id,
+							...obj,
 							count: obj.count + 1
 						};
 					};
@@ -67,7 +69,7 @@ export const cart = (state = initialState, action) => {
 					if (obj.id === action.payload) {
 						if (obj.count > 1) {
 							return {
-								id: obj.id,
+								...obj,
 								count: obj.count - 1
 							};
 						};
