@@ -23,9 +23,9 @@ const MainView = () => {
 	const filters = ['Піци', 'Напої', 'Десерти'];
 
 	return (
-		<div className="content">
+		<section className="content">
 			<div className="container">
-				<div className="categories">
+				<nav className="categories">
 					<ul>
 						<li
 							onClick={() => setActiveClass(null)}
@@ -42,14 +42,14 @@ const MainView = () => {
 							)
 						})}
 					</ul>
-				</div>
+				</nav>
 				<div className="content__items">
 					{pizzas.map(item => {
 						return (<PizzaBlock key={item.id} pizza={item} amount={amount} />)
 					})}
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 };
 

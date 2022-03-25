@@ -13,9 +13,7 @@ const Header = () => {
 						<p>найсмачніша піца у Всесвіті</p>
 					</div>
 				</a>
-				<div className='header__buttons'>
-					<CartButton />
-				</div>
+				<CartButton />
 			</div>
 		</header>
 	);

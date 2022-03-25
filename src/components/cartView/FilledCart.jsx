@@ -37,7 +37,7 @@ const FilledCart = ({ order }) => {
 	}, [amount])
 
 	return (
-		<div className="content">
+		<section className="content">
 			<div className="container container--cart">
 				<div className="cart">
 					<div className="cart__top">
@@ -82,7 +82,7 @@ const FilledCart = ({ order }) => {
 					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 };
 

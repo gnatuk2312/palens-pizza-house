@@ -4,7 +4,7 @@ import emptyCart from '../../img/empty-cart.png';
 
 const EmptyCart = () => {
 	return (
-		<div className="content">
+		<section className="content">
 			<div className="container container--cart">
 				<div className="cart cart--empty">
 					<h2>Корзина порожня <i>💔</i></h2>
@@ -19,7 +19,7 @@ const EmptyCart = () => {
 					</NavLink>
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 };
 
