@@ -64,6 +64,7 @@ const CartItem = ({ item, amount }) => {
 					</svg>
 				</div>
 			</div>
+
 		</article>
 	);
 };
