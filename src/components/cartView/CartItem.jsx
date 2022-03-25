@@ -18,7 +18,7 @@ const CartItem = ({ item, amount }) => {
 	};
 
 	return (
-		<article className="cart__item">
+		<div className="cart__item">
 			<div className='cart__item-wrapper'>
 				<div className="cart__item-img">
 					<img
@@ -64,7 +64,7 @@ const CartItem = ({ item, amount }) => {
 					</svg>
 				</div>
 			</div>
-		</article>
+		</div>
 	);
 };
 
