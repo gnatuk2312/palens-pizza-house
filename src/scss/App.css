@@ -481,8 +481,14 @@ a {
   font-size: 16px;
 }
 
+.pizza-block__arrow span:hover {
+  text-decoration: underline;
+}
+
 .pizza-block__arrow::after {
   content: "";
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
   position: relative;
   top: 6px;
   right: -6px;
@@ -496,8 +502,8 @@ a {
 }
 
 .pizza-block__arrow.active::after {
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
+  -webkit-transform: rotateZ(90deg);
+          transform: rotateZ(90deg);
 }
 
 .pizza-block__description-text {
