@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { CSSTransition } from "react-transition-group";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/actions/cart";
 
@@ -29,9 +30,15 @@ const PizzaBlock = ({ pizza, amount }) => {
 						className={openedDescription ? "pizza-block__arrow active" : "pizza-block__arrow"}>
 						<span>Детально</span>
 					</div>
-					{openedDescription && <p className='pizza-block__description-text'>
-						{" Рейтинг: " + pizza.rating + " ★"}
-					</p>}
+					<CSSTransition
+						in={openedDescription}
+						classNames='description'
+						timeout={500}
+					>
+						<p className='pizza-block__description-text'>
+							{" Рейтинг: " + pizza.rating + " ★"}
+						</p>
+					</CSSTransition>
 				</div>
 			</div>
 			<div className="pizza-block__bottom">

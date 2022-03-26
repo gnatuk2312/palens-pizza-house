@@ -42,9 +42,13 @@
 		cursor: pointer;
 		span {
 			font-size: 16px;
+			&:hover {
+				text-decoration: underline;
+			}
 		}
 		&::after {
 			content: "";
+			transition: 0.4s;
 			position: relative;
 			top: 6px;
 			right: -6px;
@@ -58,15 +62,16 @@
 	}
 	&__arrow.active {
 		&::after {
-			transform: rotate(90deg);
+			transform: rotateZ(90deg);
 		}
 	}
 
 	&__description-text {
 		font-size: 12px;
-		margin-top: 10px;
+		margin: 0px;
 		max-width: 260px;
-		height: 100%;
+		opacity: 0;
+		max-height: 0;
 	}
 
 	&__bottom {

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { clearCart } from '../../redux/actions/cart';
 import { NavLink } from "react-router-dom";
 import CartItem from './CartItem';
@@ -57,12 +58,19 @@ const FilledCart = ({ order }) => {
 							<span>Очистити корзину</span>
 						</button>
 					</div>
-					<div className="content__items">
+					<TransitionGroup component='div' className="content__items">
 						{order.map(item => {
-							return <CartItem item={item} amount={amount} key={item.id} />
+							return (
+								<CSSTransition
+									key={item.id}
+									timeout={400}
+									classNames='cart-item'
+								>
+									<CartItem item={item} amount={amount} key={item.id} />
+								</CSSTransition>
+							)
 						})}
-
-					</div>
+					</TransitionGroup>
 					<div className="cart__bottom">
 						<div className="cart__bottom-details">
 							<span> Всього: <b>{total} шт.</b> </span>
