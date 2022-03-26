@@ -159,6 +159,7 @@ body {
 		max-height: 400px;
 		@media (max-width: 480px) {
 			flex-direction: column;
+			align-items: flex-start;
 		}
 
 		&-wrapper {
