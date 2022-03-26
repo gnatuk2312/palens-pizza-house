@@ -42,3 +42,27 @@
 	transform: translateX(-40%);
 	transition: all 0.4s ease;
 }
+
+.count-enter {
+	opacity: 0.3;
+	transform: translateY(100%) scale(0.3);
+	transition: all 0.4s ease;
+}
+.count-enter-active {
+	opacity: 1;
+	transform: translateY(0) scale(1);
+}
+
+.count-exit {
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 1;
+	transform: translateY(0) scale(1);
+	transform: scale(1);
+	transition: all 0.4s ease;
+}
+.count-exit-active {
+	opacity: 0.1;
+	transform: translateY(-80%) scale(0.5);
+}

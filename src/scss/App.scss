@@ -213,7 +213,8 @@ body {
 		&-count {
 			display: flex;
 			align-items: center;
-			b {
+			div {
+				font-weight: 600;
 				font-size: 22px;
 				padding: 0 6px;
 				@media (max-width: 767px) {
@@ -229,6 +230,9 @@ body {
 					}
 				}
 			}
+		}
+		.count {
+			position: relative;
 		}
 
 		&-price {
