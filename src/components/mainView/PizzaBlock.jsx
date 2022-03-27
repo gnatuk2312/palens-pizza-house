@@ -16,7 +16,7 @@ const PizzaBlock = ({ pizza, amount }) => {
 	};
 
 	return (
-		<div className="pizza-block">
+		<article className="pizza-block">
 			<div>
 				<img
 					className="pizza-block__image"
@@ -66,7 +66,7 @@ const PizzaBlock = ({ pizza, amount }) => {
 					})}
 				</div>
 			</div>
-		</div>
+		</article>
 	);
 };
 export default PizzaBlock;

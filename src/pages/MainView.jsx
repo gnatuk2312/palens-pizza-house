@@ -23,7 +23,7 @@ const MainView = () => {
 	const filters = ['Піци', 'Напої', 'Десерти'];
 
 	return (
-		<div className="content">
+		<section className="content">
 			<div className="container">
 				<div className="categories">
 					<ul>
@@ -49,7 +49,7 @@ const MainView = () => {
 					})}
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 };
 
