@@ -436,7 +436,7 @@ a {
 }
 
 @media (max-width: 768px) {
-  .pizza-block:not(:last-of-type) {
+  .pizza-block {
     border-bottom: 1px solid #efefef;
     margin-bottom: 25px;
     padding-bottom: 45px;

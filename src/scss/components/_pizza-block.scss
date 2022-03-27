@@ -12,11 +12,9 @@
 	}
 
 	@media (max-width: 768px) {
-		&:not(:last-of-type) {
-			border-bottom: 1px solid #efefef;
-			margin-bottom: 25px;
-			padding-bottom: 45px;
-		}
+		border-bottom: 1px solid #efefef;
+		margin-bottom: 25px;
+		padding-bottom: 45px;
 	}
 
 	&__image {
