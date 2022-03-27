@@ -43,6 +43,7 @@ body {
 	}
 
 	&__items {
+		margin-top: 30px;
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 		grid-gap: 4vw;
@@ -84,17 +85,16 @@ body {
 		align-items: center;
 		@media (max-width: 768px) {
 			flex-direction: column;
-
-			.content__title {
-				margin-bottom: 30px;
-			}
 		}
 	}
-
 	.content__title {
 		display: flex;
 		align-items: center;
 		font-size: 32px;
+		@media (max-width: 768px) {
+			margin-bottom: 20px;
+			font-size: 24px;
+		}
 
 		svg {
 			position: relative;
@@ -293,8 +293,10 @@ body {
 		&-details {
 			display: flex;
 			justify-content: space-between;
-			@media (max-width: 480px) {
+			align-items: center;
+			@media (max-width: 520px) {
 				flex-direction: column;
+				align-items: flex-start;
 				margin-left: 10px;
 			}
 
@@ -369,7 +371,7 @@ body {
 	}
 
 	&--empty {
-		margin: auto;
+		margin: 20px auto;
 		max-width: 600px;
 		text-align: center;
 
