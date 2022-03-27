@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import PizzaBlock from '../components/mainView/PizzaBlock';
+import LoaderBlock from '../components/mainView/LoaderBlock';
+
+const loaderArray = [1, 2, 3, 4, 5, 6, 7, 8];
 
 const MainView = () => {
 
@@ -44,9 +47,13 @@ const MainView = () => {
 					</ul>
 				</div>
 				<div className="content__items">
-					{pizzas.map(item => {
+					{pizzas.length ? (pizzas.map(item => {
 						return (<PizzaBlock key={item.id} pizza={item} amount={amount} />)
-					})}
+					})) : (
+						loaderArray.map(i => {
+							return (<LoaderBlock key={i} />)
+						})
+					)}
 				</div>
 			</div>
 		</section>
