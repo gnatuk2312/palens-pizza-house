@@ -18,11 +18,13 @@ const PizzaBlock = ({ pizza, amount }) => {
 	return (
 		<article className="pizza-block">
 			<div>
-				<img
-					className="pizza-block__image"
-					src={pizza.imageUrl}
-					alt="Pizza"
-				/>
+				<div className="pizza-block__image-wrapper">
+					<img
+						className="pizza-block__image"
+						src={pizza.imageUrl}
+						alt={pizza.name}
+					/>
+				</div>
 				<h4 className="pizza-block__title">{pizza.name}</h4>
 				<div className='pizza-block__description'>
 					<div
@@ -36,7 +38,7 @@ const PizzaBlock = ({ pizza, amount }) => {
 						timeout={500}
 					>
 						<p className='pizza-block__description-text'>
-							{" Рейтинг: " + pizza.rating + " ★"}
+							{pizza.description}
 						</p>
 					</CSSTransition>
 				</div>

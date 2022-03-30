@@ -17,8 +17,18 @@
 		padding-bottom: 45px;
 	}
 
+	&__image-wrapper {
+		position: relative;
+		margin: 0 auto;
+		height: 260px;
+	}
 	&__image {
-		width: 260px;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		object-fit: contain;
 	}
 
 	&__title {

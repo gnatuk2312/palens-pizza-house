@@ -37,7 +37,7 @@ const CartItem = ({ item, amount }) => {
 				</div>
 				<div className="cart__item-info">
 					<h3>{item.name}</h3>
-					<p>Рейтинг: {item.rating} ★</p>
+					<p>{item.addition[0]}</p>
 				</div>
 			</div>
 			<div className='cart__item-count_price'>
