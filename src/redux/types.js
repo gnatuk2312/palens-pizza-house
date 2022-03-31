@@ -1,4 +1,7 @@
 export const LOAD_ALL_PIZZAS = "LOAD_ALL_PIZZAS";
+export const SHOW_ALL_PIZZAS = "SHOW_ALL_PIZZAS";
+export const FILTER_PRODUCTS_TO_SHOW = "FILTER_PRODUCTS_TO_SHOW";
+
 
 export const ADD_TO_CART = "ADD_TO_CART";
 export const CLEAR_CART = "CLEAR_CART";

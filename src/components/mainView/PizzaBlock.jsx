@@ -62,8 +62,8 @@ const PizzaBlock = ({ pizza, amount }) => {
 					</svg>
 					<span>Добавити</span>
 					{amount.map(item => {
-						if (item.id === pizza.id) {
-							return <i key={item.id}>{item.count}</i>;
+						if (item._id === pizza._id) {
+							return <i key={item._id}>{item.count}</i>;
 						}; return null;
 					})}
 				</div>

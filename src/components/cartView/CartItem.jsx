@@ -8,19 +8,19 @@ const CartItem = ({ item, amount }) => {
 	const dispatch = useDispatch();
 
 	const deleteItem = () => {
-		dispatch(deleteItemFromCart(item.id));
+		dispatch(deleteItemFromCart(item._id));
 	};
 
 	const decrement = () => {
-		dispatch(decrementAmount(item.id))
+		dispatch(decrementAmount(item._id))
 	};
 	const increment = () => {
-		dispatch(incrementAmount(item.id))
+		dispatch(incrementAmount(item._id))
 	};
 
 	let count = 0;
 	amount.forEach(obj => {
-		if (obj.id === item.id) {
+		if (obj._id === item._id) {
 			count = obj.count;
 		};
 	});
