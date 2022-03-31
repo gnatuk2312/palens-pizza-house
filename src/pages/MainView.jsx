@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import PizzaBlock from '../components/mainView/PizzaBlock';
 import LoaderBlock from '../components/mainView/LoaderBlock';
@@ -9,12 +9,17 @@ const loaderArray = [1, 2, 3, 4, 5, 6, 7, 8];
 
 const MainView = () => {
 
-	const dispatch = useDispatch()
+	const dispatch = useDispatch();
+	const filters = ['Піци', 'Напої', 'Десерти'];
+
+
+	useEffect(() => {
+		dispatch({ type: SHOW_ALL_PIZZAS });
+	}, [dispatch]);
 
 	const pizzas = useSelector(state => {
 		return state.pizza.pizzas;
 	});
-
 	const amount = useSelector(state => {
 		return state.cart.amount;
 	});
@@ -24,6 +29,7 @@ const MainView = () => {
 		return state;
 	});
 	console.log("state >>", state);
+
 
 	const [activeClass, setActiveClass] = useState(null);
 
@@ -39,13 +45,10 @@ const MainView = () => {
 			dispatch(filterProducts("dessert"))
 		};
 	};
-
 	const handleClickOnAllButton = () => {
 		setActiveClass(null);
 		dispatch({ type: SHOW_ALL_PIZZAS });
-	}
-
-	const filters = ['Піци', 'Напої', 'Десерти'];
+	};
 
 	return (
 		<section className="content">
