@@ -62,11 +62,11 @@ const FilledCart = ({ order }) => {
 						{order.map(item => {
 							return (
 								<CSSTransition
-									key={item.id}
+									key={item._id}
 									timeout={400}
 									classNames='cart-item'
 								>
-									<CartItem item={item} amount={amount} key={item.id} />
+									<CartItem item={item} amount={amount} key={item._id} />
 								</CSSTransition>
 							)
 						})}

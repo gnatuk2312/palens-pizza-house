@@ -48,7 +48,7 @@ const MainView = () => {
 				</div>
 				<div className="content__items">
 					{pizzas.length ? (pizzas.map(item => {
-						return (<PizzaBlock key={item.id} pizza={item} amount={amount} />)
+						return (<PizzaBlock key={item._id} pizza={item} amount={amount} />)
 					})) : (
 						loaderArray.map(i => {
 							return (<LoaderBlock key={i} />)
