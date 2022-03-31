@@ -1,4 +1,5 @@
 import { FILTER_PRODUCTS_TO_SHOW, LOAD_ALL_PIZZAS, SHOW_ALL_PIZZAS } from "../types";
+import toast from "react-hot-toast";
 
 export const loadPizzas = () => {
 	return async dispatch => {
@@ -13,7 +14,7 @@ export const loadPizzas = () => {
 				type: SHOW_ALL_PIZZAS
 			});
 		} catch (err) {
-			console.log('errror >>', err);
+			toast.error(`Помилка у завантаженні елементів з бази даних. Деталі: ${err}`);
 		}
 	};
 };

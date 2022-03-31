@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Switch, Route } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
 import MainView from './pages/MainView';
 import CartView from './pages/CartView';
 import Header from './components/common/Header';
@@ -29,6 +30,12 @@ function App() {
 	return (
 		<div className="wrapper">
 			<Header />
+			<Toaster
+				toastOptions={{
+					duration: 8000,
+					className: 'toaster'
+				}}
+			/>
 			<Switch>
 				<Route path='/cart' component={CartView} />
 				<Route path='/' component={MainView} />
