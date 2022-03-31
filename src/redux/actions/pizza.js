@@ -1,11 +1,9 @@
-import { LOAD_ALL_PIZZAS, SHOW_ALL_PIZZAS } from "../types";
+import { FILTER_PRODUCTS_TO_SHOW, LOAD_ALL_PIZZAS, SHOW_ALL_PIZZAS } from "../types";
 
 export const loadPizzas = () => {
 	return async dispatch => {
 		try {
 			const response = await fetch('https://whispering-river-85355.herokuapp.com/api/products');
-			console.log('response >>', response);
-
 			const jsonData = await response.json();
 			dispatch({
 				type: LOAD_ALL_PIZZAS,
@@ -19,3 +17,10 @@ export const loadPizzas = () => {
 		}
 	};
 };
+
+export const filterProducts = (category) => {
+	return {
+		type: FILTER_PRODUCTS_TO_SHOW,
+		payload: category
+	}
+}

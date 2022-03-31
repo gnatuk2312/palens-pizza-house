@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import PizzaBlock from '../components/mainView/PizzaBlock';
 import LoaderBlock from '../components/mainView/LoaderBlock';
+import { filterProducts } from '../redux/actions/pizza';
+import { SHOW_ALL_PIZZAS } from '../redux/types';
 
 const loaderArray = [1, 2, 3, 4, 5, 6, 7, 8];
 
 const MainView = () => {
+
+	const dispatch = useDispatch()
 
 	const pizzas = useSelector(state => {
 		return state.pizza.pizzas;
@@ -23,6 +27,24 @@ const MainView = () => {
 
 	const [activeClass, setActiveClass] = useState(null);
 
+	const handleClickOnFilters = (index, item) => {
+		setActiveClass(index);
+		if (item === 'Піци') {
+			dispatch(filterProducts("pizza"))
+		};
+		if (item === 'Напої') {
+			dispatch(filterProducts("drink"))
+		};
+		if (item === 'Десерти') {
+			dispatch(filterProducts("dessert"))
+		};
+	};
+
+	const handleClickOnAllButton = () => {
+		setActiveClass(null);
+		dispatch({ type: SHOW_ALL_PIZZAS });
+	}
+
 	const filters = ['Піци', 'Напої', 'Десерти'];
 
 	return (
@@ -31,14 +53,14 @@ const MainView = () => {
 				<div className="categories">
 					<ul>
 						<li
-							onClick={() => setActiveClass(null)}
+							onClick={handleClickOnAllButton}
 							className={activeClass === null ? "active" : ""}
 						>Все</li>
 
 						{filters.map((item, index) => {
 							return (
 								<li
-									onClick={() => setActiveClass(index)}
+									onClick={() => handleClickOnFilters(index, item)}
 									key={item}
 									className={activeClass === index ? "active" : ""}
 								>{item}</li>

@@ -1,4 +1,4 @@
-import { LOAD_ALL_PIZZAS, SHOW_ALL_PIZZAS } from "../types";
+import { LOAD_ALL_PIZZAS, SHOW_ALL_PIZZAS, FILTER_PRODUCTS_TO_SHOW } from "../types";
 
 const initialState = {
 	products: [],
@@ -20,6 +20,12 @@ export const pizza = (state = initialState, action) => {
 			return {
 				...state,
 				pizzas: state.products
+			}
+
+		case FILTER_PRODUCTS_TO_SHOW:
+			return {
+				...state,
+				pizzas: state.products.filter(item => item.category === action.payload)
 			}
 
 		default:
