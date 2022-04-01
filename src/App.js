@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import MainView from './pages/MainView';
 import CartView from './pages/CartView';
+import AuthView from './pages/AuthView';
 import Header from './components/common/Header';
 import Footer from './components/common/Footer';
 import './scss/App.css';
@@ -30,14 +31,10 @@ function App() {
 	return (
 		<div className="wrapper">
 			<Header />
-			<Toaster
-				toastOptions={{
-					duration: 8000,
-					className: 'toaster'
-				}}
-			/>
+			<Toaster toastOptions={{ duration: 8000, className: 'toaster' }} />
 			<Switch>
 				<Route path='/cart' component={CartView} />
+				<Route path='/auth' component={AuthView} />
 				<Route path='/' component={MainView} />
 			</Switch>
 			<Footer />
