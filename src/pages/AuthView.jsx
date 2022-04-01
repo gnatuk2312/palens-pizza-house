@@ -25,6 +25,7 @@ const AuthView = () => {
 				<div className='auth-bottom'></div>
 			</article>
 		</section>
+
 	);
 };
 
