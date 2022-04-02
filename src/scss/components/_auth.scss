@@ -82,6 +82,11 @@
 		font-size: 16px;
 		padding: 10px 16px;
 		box-shadow: 4px 6px 8px rgba(0,0,0, 0.16);
+		&:disabled{
+			cursor: not-allowed;
+			background-color: rgba(0,0,0, 0.4);
+			color: white;
+		}
 		@media (max-width: 480px) {
 			width: 90%;
 		}
