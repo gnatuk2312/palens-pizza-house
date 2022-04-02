@@ -3,8 +3,8 @@ import { useInput } from '../../hooks/useInput';
 
 
 const Register = () => {
-	const login = useInput('', { isEmpty: true, isLoginError: true }, 'Логін');
-	const password = useInput('', { isEmpty: true }, 'Пароль');
+	const login = useInput('', { isEmpty: true, minLength: 6, isLoginError: true }, 'Логін');
+	const password = useInput('', { isEmpty: true, minLength: 6 }, 'Пароль');
 	const name = useInput('', { isEmpty: true }, "Ім'я");
 	const surname = useInput('', { isEmpty: true }, "Прізвище");
 
@@ -36,6 +36,7 @@ const Register = () => {
 				placeholder='Логін' />
 			{(login.isDirty && login.isEmpty) && <p className='auth-error'>{login.isEmptyText}</p>}
 			{(login.isDirty && login.isLoginError) && <p className='auth-error'>Тільки латинські букви та цифри</p>}
+			{(login.isDirty && login.minLengthError) && <p className='auth-error'>Логін повинен містити більше 6 символів</p>}
 			<input
 				onChange={e => password.onChange(e)}
 				onBlur={e => password.onBlur(e)}
@@ -45,6 +46,7 @@ const Register = () => {
 				name='password'
 				placeholder='Пароль' />
 			{(password.isDirty && password.isEmpty) && <p className='auth-error'>{password.isEmptyText}</p>}
+			{(password.isDirty && password.minLengthError) && <p className='auth-error'>Пароль повиннен містити більше 6 символів</p>}
 			<button disabled={!name.inputValid || !surname.inputValid || !login.inputValid || !password.inputValid} className='auth-submit auth-button' type='submit'>Зареєструватись</button>
 		</form>
 	);
