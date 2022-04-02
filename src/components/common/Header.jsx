@@ -13,15 +13,15 @@ const Header = () => {
 	return (
 		<header className="header">
 			<div className="container">
-				<a href='/' className="header__logo">
+				<div className="header__logo">
 					<img width="38" src={logo} alt="Pizza logo" />
 					<div>
-						<h1>Palen`s PizzaHouse</h1>
+						<a href='/'><h1>Palen`s PizzaHouse</h1></a>
 						{(name || surname) ?
 							<p className='header__text'>Вітаємо на сайті, {name} {surname}</p> :
 							<NavLink className='header__text' to='/auth'>Увійдіть або Зареєструйтесь</NavLink>}
 					</div>
-				</a>
+				</div>
 				<div className='header__buttons'>
 					<CartButton />
 				</div>

@@ -123,6 +123,8 @@ a {
   font-size: 24px;
   letter-spacing: 1%;
   font-weight: 800;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
 }
 
 @media (max-width: 767px) {
@@ -137,9 +139,16 @@ a {
   }
 }
 
+.header__logo h1:hover {
+  color: black;
+}
+
 .header__logo .header__text {
   color: #7b7b7b;
   font-size: 16px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid white;
 }
 
 @media (max-width: 767px) {
@@ -155,8 +164,8 @@ a {
 }
 
 .header__logo a:hover {
-  color: #232323;
-  text-decoration: underline;
+  color: black;
+  border-bottom: 1px solid #232323;
 }
 
 .button {
