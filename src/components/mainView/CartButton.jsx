@@ -7,13 +7,10 @@ const CartButton = () => {
 	const orderLength = useSelector(state => {
 		return state.cart.order.length;
 	});
-	const user = useSelector(state => {
-		return state.user.user;
-	})
 
 	return (
 		<div className="header__cart">
-			<NavLink to={user.login ? '/cart' : '/auth'} className="button button--cart">
+			<NavLink to='/cart' className="button button--cart">
 				<span className='cart__text'>Корзина</span>
 				<div className="button__delimiter"></div>
 				<svg

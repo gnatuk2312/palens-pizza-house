@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import Authorisation from '../components/authView/Authorisation';
 import Register from '../components/authView/Register';
 
@@ -8,6 +10,14 @@ const AuthView = () => {
 	const handleClick = e => {
 		setCurrentForm(e.target.textContent);
 	};
+
+	const token = useSelector((state) => {
+		return state.user.token;
+	});
+
+	if (token) {
+		return <Redirect to="/cart" />;
+	}
 
 	return (
 		<section className="auth">

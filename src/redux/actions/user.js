@@ -18,8 +18,10 @@ export const registerUser = (name, surname, login, password) => {
 					type: SET_USER,
 					payload: response.data
 				});
+
 				console.log('Succesful REGISTER');
-			}
+
+			};
 
 			console.log(response);
 
@@ -36,7 +38,7 @@ export const registerUser = (name, surname, login, password) => {
 					console.log('Bad path in request');
 					break;
 
-				case 404:
+				case 409:
 					console.log('Login in use');
 					break;
 
@@ -66,6 +68,7 @@ export const loginUser = (login, password) => {
 					type: SET_USER,
 					payload: response.data
 				});
+
 				console.log('Succesful LOGIN');
 			};
 
