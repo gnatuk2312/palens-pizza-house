@@ -5,7 +5,9 @@ export const useValidation = (value, validations, name) => {
 	const [isEmpty, setEmpty] = useState(true);
 	const isEmptyText = `Поле ${name} не може бути порожнім`;
 	const [minLengthError, setMinLengthError] = useState(false);
-	const [isLoginError, setLoginError] = useState(true);
+	const [isLoginError, setLoginError] = useState(false);
+
+	const [inputValid, setInputValid] = useState(false);
 
 	useEffect(() => {
 		for (const validation in validations) {
@@ -30,10 +32,20 @@ export const useValidation = (value, validations, name) => {
 
 	}, [value, validations]);
 
+	useEffect(() => {
+		if (isEmpty || minLengthError || isLoginError) {
+			setInputValid(false);
+		} else {
+			setInputValid(true);
+		}
+
+	}, [isEmpty, minLengthError, isLoginError])
+
 	return {
 		isEmpty,
 		isEmptyText,
 		minLengthError,
-		isLoginError
+		isLoginError,
+		inputValid
 	};
 };

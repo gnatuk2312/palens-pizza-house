@@ -16,7 +16,7 @@ const Authorisation = () => {
 				name='login'
 				placeholder='Логін' />
 			{(login.isDirty && login.isEmpty) && <p className='auth-error'>{login.isEmptyText}</p>}
-			{(login.isDirty && login.isLoginError) && <p className='auth-error'>Тільки латинські символи та цифри</p>}
+			{(login.isDirty && login.isLoginError) && <p className='auth-error'>Тільки латинські букви та цифри</p>}
 			{(login.isDirty && login.minLengthError) && <p className='auth-error'>Логін повинен містити більше 6 символів</p>}
 			<input
 				onChange={e => password.onChange(e)}
@@ -28,7 +28,7 @@ const Authorisation = () => {
 				placeholder='Пароль' />
 			{(password.isDirty && password.isEmpty) && <p className='auth-error'>{password.isEmptyText}</p>}
 			{(password.isDirty && password.minLengthError) && <p className='auth-error'>Пароль повиннен містити більше 6 символів</p>}
-			<button className='auth-submit auth-button' type='submit'>Увійти</button>
+			<button disabled={!login.inputValid || !password.inputValid} className='auth-submit auth-button' type='submit'>Увійти</button>
 		</form>
 	);
 };

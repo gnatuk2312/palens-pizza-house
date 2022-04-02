@@ -1162,6 +1162,12 @@ a {
           box-shadow: 4px 6px 8px rgba(0, 0, 0, 0.16);
 }
 
+.auth-submit:disabled {
+  cursor: not-allowed;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+}
+
 @media (max-width: 480px) {
   .auth-submit {
     width: 90%;
