@@ -1,12 +1,21 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { useInput } from '../../hooks/useInput';
+import { loginUser } from '../../redux/actions/user';
 
 const Authorisation = () => {
 	const login = useInput('', { isEmpty: true, minLength: 6, isLoginError: true }, 'Логін');
 	const password = useInput('', { isEmpty: true, minLength: 6 }, 'Пароль');
 
+	const dispatch = useDispatch();
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		dispatch(loginUser(login.value, password.value));
+	}
+
 	return (
-		<form className="auth-form">
+		<form onSubmit={handleSubmit} className="auth-form">
 			<input
 				onChange={e => login.onChange(e)}
 				onBlur={e => login.onBlur(e)}

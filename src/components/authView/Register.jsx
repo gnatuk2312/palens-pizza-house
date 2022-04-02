@@ -1,5 +1,7 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { useInput } from '../../hooks/useInput';
+import { registerUser } from '../../redux/actions/user';
 
 
 const Register = () => {
@@ -8,8 +10,15 @@ const Register = () => {
 	const name = useInput('', { isEmpty: true }, "Ім'я");
 	const surname = useInput('', { isEmpty: true }, "Прізвище");
 
+	const dispatch = useDispatch();
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		dispatch(registerUser(name.value, surname.value, login.value, password.value));
+	}
+
 	return (
-		<form className="auth-form">
+		<form onSubmit={handleSubmit} className="auth-form">
 			<input
 				onChange={e => name.onChange(e)}
 				onBlur={e => name.onBlur(e)}
@@ -17,7 +26,7 @@ const Register = () => {
 				className='auth-input'
 				type="text" name='name'
 				placeholder="Ім'я" />
-			{(name.isDirty && login.isEmpty) && <p className='auth-error'>{name.isEmptyText}</p>}
+			{(name.isDirty && name.isEmpty) && <p className='auth-error'>{name.isEmptyText}</p>}
 			<input
 				onChange={e => surname.onChange(e)}
 				onBlur={e => surname.onBlur(e)}
@@ -25,7 +34,7 @@ const Register = () => {
 				className='auth-input'
 				type="text" name='surname'
 				placeholder='Прізвище' />
-			{(surname.isDirty && login.isEmpty) && <p className='auth-error'>{surname.isEmptyText}</p>}
+			{(surname.isDirty && surname.isEmpty) && <p className='auth-error'>{surname.isEmptyText}</p>}
 			<input
 				onChange={e => login.onChange(e)}
 				onBlur={e => login.onBlur(e)}
