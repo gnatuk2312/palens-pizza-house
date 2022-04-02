@@ -28,22 +28,34 @@
 			font-size: 24px;
 			letter-spacing: 1%;
 			font-weight: 800;
+			transition: color 0.3s ease;
 			@media (max-width: 767px) {
 				font-size: 22px;
 			}
 			@media (max-width: 554px) {
 				font-size: 18px;
 			}
+			&:hover{
+				color: black;
+			}
 		}
 
-		p {
+		.header__text {
 			color: #7b7b7b;
 			font-size: 16px;
+			transition: all 0.3s ease;
+			border-bottom: 1px solid white;
 			@media (max-width: 767px) {
 				font-size: 15px;
 			}
 			@media (max-width: 554px) {
 				font-size: 12px;
+			}
+		}
+		a {
+			&:hover{
+				color: black;
+				border-bottom: 1px solid $black;
 			}
 		}
 	}

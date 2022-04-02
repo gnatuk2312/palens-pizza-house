@@ -123,6 +123,8 @@ a {
   font-size: 24px;
   letter-spacing: 1%;
   font-weight: 800;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
 }
 
 @media (max-width: 767px) {
@@ -137,21 +139,33 @@ a {
   }
 }
 
-.header__logo p {
+.header__logo h1:hover {
+  color: black;
+}
+
+.header__logo .header__text {
   color: #7b7b7b;
   font-size: 16px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid white;
 }
 
 @media (max-width: 767px) {
-  .header__logo p {
+  .header__logo .header__text {
     font-size: 15px;
   }
 }
 
 @media (max-width: 554px) {
-  .header__logo p {
+  .header__logo .header__text {
     font-size: 12px;
   }
+}
+
+.header__logo a:hover {
+  color: black;
+  border-bottom: 1px solid #232323;
 }
 
 .button {
@@ -596,8 +610,8 @@ a {
 
 @media (max-width: 768px) {
   .cart .content__title {
-    margin-bottom: 20px;
-    font-size: 24px;
+    padding-bottom: 16px;
+    font-size: 22px;
   }
 }
 
@@ -1418,13 +1432,11 @@ body {
   padding: 20px;
   font-size: 20px;
   max-width: 80%;
-  margin-top: 240px;
 }
 
 @media (max-width: 767px) {
   .toaster {
     font-size: 16px;
-    margin-top: 200px;
   }
 }
 
@@ -1432,6 +1444,5 @@ body {
   .toaster {
     font-size: 12px;
     max-width: 100%;
-    margin-top: 160px;
   }
 }
