@@ -1,5 +1,6 @@
 import axios from "axios";
-import { SET_USER } from '../types'
+import toast from "react-hot-toast";
+import { SET_USER } from '../types';
 
 export const registerUser = (name, surname, login, password) => {
 	return async dispatch => {
@@ -19,8 +20,7 @@ export const registerUser = (name, surname, login, password) => {
 					payload: response.data
 				});
 
-				console.log('Succesful REGISTER');
-
+				toast.success('Ваш аккаунт успішно зареєстровано');
 			};
 
 			console.log(response);
@@ -31,22 +31,23 @@ export const registerUser = (name, surname, login, password) => {
 
 			switch (error) {
 				case 400:
-					console.log('Bad Request');
+					toast.error('Упс.. Щось пішло не так...');
 					break;
 
 				case 404:
-					console.log('Bad path in request');
+					toast.error('Упс.. Щось пішло не так...');
 					break;
 
 				case 409:
-					console.log('Login in use');
+					toast.error('Цей Логін вже Зареєстрований');
 					break;
 
 				case 500:
-					console.log('problems in server');
+					toast.error('Схоже у нас проблеми з сервером... Спробуйте пізніше');
 					break;
 
 				default:
+					toast.error(`Упс.. Щось пішло не так... Деталі: ${err} `);
 					break;
 			};
 		}
@@ -69,7 +70,7 @@ export const loginUser = (login, password) => {
 					payload: response.data
 				});
 
-				console.log('Succesful LOGIN');
+				toast.success(`Вітаємо вас, ${response.data.user.name}`);
 			};
 
 			console.log(response);
@@ -80,22 +81,23 @@ export const loginUser = (login, password) => {
 
 			switch (error) {
 				case 400:
-					console.log('Bad Request');
+					toast.error('Упс.. Щось пішло не так...');
 					break;
 
 				case 401:
-					console.log('Wrong Password or login');
+					toast.error('Невірний Логін або Пароль');
 					break;
 
 				case 404:
-					console.log('Bad path in request');
+					toast.error('Упс.. Щось пішло не так...');
 					break;
 
 				case 500:
-					console.log('problems in server');
+					toast.error('Схоже у нас проблеми з сервером... Спробуйте пізніше');
 					break;
 
 				default:
+					toast.error(`Упс.. Щось пішло не так... Деталі: ${err} `);
 					break;
 			};
 		}

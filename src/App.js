@@ -31,7 +31,7 @@ function App() {
 	return (
 		<div className="wrapper">
 			<Header />
-			<Toaster toastOptions={{ duration: 8000, className: 'toaster' }} />
+			<Toaster position="bottom-center" toastOptions={{ duration: 5000, className: 'toaster' }} />
 			<Switch>
 				<Route path='/cart' component={CartView} />
 				<Route path='/auth' component={AuthView} />

@@ -596,8 +596,8 @@ a {
 
 @media (max-width: 768px) {
   .cart .content__title {
-    margin-bottom: 20px;
-    font-size: 24px;
+    padding-bottom: 16px;
+    font-size: 22px;
   }
 }
 
@@ -1418,13 +1418,11 @@ body {
   padding: 20px;
   font-size: 20px;
   max-width: 80%;
-  margin-top: 240px;
 }
 
 @media (max-width: 767px) {
   .toaster {
     font-size: 16px;
-    margin-top: 200px;
   }
 }
 
@@ -1432,6 +1430,5 @@ body {
   .toaster {
     font-size: 12px;
     max-width: 100%;
-    margin-top: 160px;
   }
 }
