@@ -137,21 +137,26 @@ a {
   }
 }
 
-.header__logo p {
+.header__logo .header__text {
   color: #7b7b7b;
   font-size: 16px;
 }
 
 @media (max-width: 767px) {
-  .header__logo p {
+  .header__logo .header__text {
     font-size: 15px;
   }
 }
 
 @media (max-width: 554px) {
-  .header__logo p {
+  .header__logo .header__text {
     font-size: 12px;
   }
+}
+
+.header__logo a:hover {
+  color: #232323;
+  text-decoration: underline;
 }
 
 .button {

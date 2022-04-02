@@ -36,7 +36,7 @@
 			}
 		}
 
-		p {
+		.header__text {
 			color: #7b7b7b;
 			font-size: 16px;
 			@media (max-width: 767px) {
@@ -44,6 +44,12 @@
 			}
 			@media (max-width: 554px) {
 				font-size: 12px;
+			}
+		}
+		a {
+			&:hover{
+				color: $black;
+				text-decoration: underline;
 			}
 		}
 	}

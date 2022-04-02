@@ -33,19 +33,15 @@ export const registerUser = (name, surname, login, password) => {
 				case 400:
 					toast.error('Упс.. Щось пішло не так...');
 					break;
-
 				case 404:
 					toast.error('Упс.. Щось пішло не так...');
 					break;
-
 				case 409:
 					toast.error('Цей Логін вже Зареєстрований');
 					break;
-
 				case 500:
 					toast.error('Схоже у нас проблеми з сервером... Спробуйте пізніше');
 					break;
-
 				default:
 					toast.error(`Упс.. Щось пішло не так... Деталі: ${err} `);
 					break;
@@ -83,19 +79,15 @@ export const loginUser = (login, password) => {
 				case 400:
 					toast.error('Упс.. Щось пішло не так...');
 					break;
-
 				case 401:
 					toast.error('Невірний Логін або Пароль');
 					break;
-
 				case 404:
 					toast.error('Упс.. Щось пішло не так...');
 					break;
-
 				case 500:
 					toast.error('Схоже у нас проблеми з сервером... Спробуйте пізніше');
 					break;
-
 				default:
 					toast.error(`Упс.. Щось пішло не так... Деталі: ${err} `);
 					break;
