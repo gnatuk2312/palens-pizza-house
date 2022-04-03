@@ -1,9 +1,10 @@
-import { ADD_TO_CART, CLEAR_CART, DECREMENT_AMOUNT, DELETE_ITEM_FROM_CART, INCREMENT_AMOUNT } from "../types";
+import { ADD_TO_CART, CLEAR_CART, CLOSE_MODAL, DECREMENT_AMOUNT, DELETE_ITEM_FROM_CART, INCREMENT_AMOUNT, OPEN_MODAL } from "../types";
 
 
 const initialState = {
 	order: localStorage.getItem('order') ? JSON.parse(localStorage.getItem('order')) : [],
-	amount: localStorage.getItem('amount') ? JSON.parse(localStorage.getItem('amount')) : []
+	amount: localStorage.getItem('amount') ? JSON.parse(localStorage.getItem('amount')) : [],
+	modalOpen: false
 }
 
 export const cart = (state = initialState, action) => {
@@ -76,6 +77,16 @@ export const cart = (state = initialState, action) => {
 					};
 					return obj;
 				})
+			}
+		case OPEN_MODAL:
+			return {
+				...state,
+				modalOpen: true
+			}
+		case CLOSE_MODAL:
+			return {
+				...state,
+				modalOpen: false
 			}
 
 		default:

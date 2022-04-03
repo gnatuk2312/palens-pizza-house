@@ -8,6 +8,8 @@ export const CLEAR_CART = "CLEAR_CART";
 export const DELETE_ITEM_FROM_CART = "DELETE_ITEM_FROM_CART";
 export const DECREMENT_AMOUNT = "DECREMENT_AMOUNT";
 export const INCREMENT_AMOUNT = "INCREMENT_AMOUNT";
+export const OPEN_MODAL = "OPEN_MODAL";
+export const CLOSE_MODAL = "CLOSE_MODAL";
 
 
 export const SET_USER = "SET_USER";
