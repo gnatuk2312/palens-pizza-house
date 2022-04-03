@@ -6,6 +6,7 @@ export const useValidation = (value, validations, name) => {
 	const isEmptyText = `Поле ${name} не може бути порожнім`;
 	const [minLengthError, setMinLengthError] = useState(false);
 	const [isLoginError, setLoginError] = useState(false);
+	const [isPhoneError, setPhoneError] = useState(false);
 
 	const [inputValid, setInputValid] = useState(false);
 
@@ -24,6 +25,9 @@ export const useValidation = (value, validations, name) => {
 					const re = /^[a-zA-Z0-9]+$/;
 					re.test(String(value).toLowerCase()) ? setLoginError(false) : setLoginError(true);
 					break;
+				case 'isPhoneError':
+					const num = /^\+380\d{3}\d{2}\d{2}\d{2}$/;
+					num.test(value) ? setPhoneError(false) : setPhoneError(true);
 
 				default:
 					return null;
@@ -46,6 +50,7 @@ export const useValidation = (value, validations, name) => {
 		isEmptyText,
 		minLengthError,
 		isLoginError,
+		isPhoneError,
 		inputValid
 	};
 };

@@ -84,7 +84,7 @@ const FilledCart = ({ order }) => {
 								<span>На головну</span>
 							</NavLink>
 							<button className="button pay-btn">
-								<span>Оплатити</span>
+								<span>Замовити</span>
 							</button>
 						</div>
 					</div>
