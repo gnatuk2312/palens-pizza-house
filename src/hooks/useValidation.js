@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 export const useValidation = (value, validations, name) => {
 
-	const [isEmpty, setEmpty] = useState(true);
+	const [isEmpty, setEmpty] = useState(false);
 	const isEmptyText = `Поле ${name} не може бути порожнім`;
 	const [minLengthError, setMinLengthError] = useState(false);
 	const [isLoginError, setLoginError] = useState(false);
@@ -28,7 +28,7 @@ export const useValidation = (value, validations, name) => {
 				case 'isPhoneError':
 					const num = /^\+380\d{3}\d{2}\d{2}\d{2}$/;
 					num.test(value) ? setPhoneError(false) : setPhoneError(true);
-
+					break;
 				default:
 					return null;
 			}
@@ -37,13 +37,13 @@ export const useValidation = (value, validations, name) => {
 	}, [value, validations]);
 
 	useEffect(() => {
-		if (isEmpty || minLengthError || isLoginError) {
+		if (isEmpty || isPhoneError || minLengthError || isLoginError) {
 			setInputValid(false);
 		} else {
 			setInputValid(true);
 		}
 
-	}, [isEmpty, minLengthError, isLoginError])
+	}, [isEmpty, minLengthError, isLoginError, isPhoneError])
 
 	return {
 		isEmpty,

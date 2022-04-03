@@ -10,7 +10,6 @@ import './scss/App.css';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { loadPizzas } from './redux/actions/pizza';
-import MakeOrder from './components/cartView/MakeOrder';
 
 function App() {
 
@@ -39,7 +38,6 @@ function App() {
 				<Route path='/' component={MainView} />
 			</Switch>
 			<Footer />
-			<MakeOrder />
 		</div>
 	);
 }
