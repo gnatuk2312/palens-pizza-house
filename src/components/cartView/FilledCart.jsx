@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { clearCart, openModal } from '../../redux/actions/cart';
@@ -100,5 +101,9 @@ const FilledCart = ({ order }) => {
 		</>
 	);
 };
+
+FilledCart.propTypes = {
+	order: PropTypes.array
+}
 
 export default FilledCart;

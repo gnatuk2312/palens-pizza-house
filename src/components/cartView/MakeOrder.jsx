@@ -1,10 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { useInput } from '../../hooks/useInput';
 import { closeModal, makeOrder } from '../../redux/actions/cart';
 
 
-const MakeOrder = (props) => {
+const MakeOrder = ({ total }) => {
+
 	const dispatch = useDispatch();
 
 	const state = useSelector(state => {
@@ -21,7 +23,7 @@ const MakeOrder = (props) => {
 			phone.value,
 			state.user.user.name,
 			state.user.user.surname,
-			props.total,
+			total,
 			state.cart.amount
 		));
 	}
@@ -51,5 +53,9 @@ const MakeOrder = (props) => {
 		</section>
 	);
 };
+
+MakeOrder.propTypes = {
+	total: PropTypes.number
+}
 
 export default MakeOrder;

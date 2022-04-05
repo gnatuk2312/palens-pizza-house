@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { useDispatch } from 'react-redux';
 import { decrementAmount, incrementAmount, deleteItemFromCart } from '../../redux/actions/cart';
@@ -77,6 +78,19 @@ const CartItem = ({ item, amount }) => {
 			</div>
 		</article>
 	);
+};
+
+CartItem.propTypes = {
+	item: PropTypes.shape({
+		addition: PropTypes.array,
+		category: PropTypes.string,
+		description: PropTypes.string,
+		imageUrl: PropTypes.string,
+		name: PropTypes.string,
+		price: PropTypes.number,
+		_id: PropTypes.string
+	}),
+	amount: PropTypes.array
 };
 
 export default CartItem;
