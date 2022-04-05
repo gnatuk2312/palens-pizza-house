@@ -1,4 +1,4 @@
-import { SET_USER } from "../types";
+import { SET_USER, DELETE_USER } from "../types";
 
 const initialState = {
 	user: {
@@ -15,6 +15,12 @@ export const user = (state = initialState, action) => {
 		case SET_USER:
 			return {
 				...action.payload
+			}
+		case DELETE_USER:
+			localStorage.setItem('token', '');
+			return {
+				token: '',
+				user: { name: '', surname: '', login: '' }
 			}
 
 		default:

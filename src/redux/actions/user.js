@@ -1,6 +1,6 @@
 import axios from "axios";
 import toast from "react-hot-toast";
-import { SET_USER } from '../types';
+import { SET_USER, DELETE_USER } from '../types';
 
 export const registerUser = (name, surname, login, password) => {
 	return async dispatch => {
@@ -107,12 +107,16 @@ export const logoutUser = (token) => {
 				throw e;
 			});
 
+			if (response.status === 204) {
+				dispatch({ type: DELETE_USER })
+			}
+			toast.success('Ви успішно вийшли з аккаунта');
 			console.log('loguot response >>', response);
 
 
 		} catch (err) {
-			console.log('error in log out >>', err);
-
+			toast.error('Не вдалось вийти з аккаунта')
+			console.log('error in logout >>', err);
 		}
 	}
 }
