@@ -6,7 +6,7 @@ const initialState = {
 		surname: '',
 		login: ''
 	},
-	token: ''
+	token: localStorage.getItem('token') ? JSON.parse(localStorage.getItem('token')) : ""
 };
 
 export const user = (state = initialState, action) => {

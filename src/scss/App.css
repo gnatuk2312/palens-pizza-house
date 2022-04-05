@@ -168,6 +168,63 @@ a {
   border-bottom: 1px solid #232323;
 }
 
+.header__account {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header__account-name {
+  color: #7b7b7b;
+  font-size: 16px;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+@media (max-width: 767px) {
+  .header__account-name {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 554px) {
+  .header__account-name {
+    font-size: 12px;
+  }
+}
+
+.header__logout {
+  max-width: 200px;
+  font-size: 16px;
+  color: white;
+  background-color: #fe5f1e;
+  border-radius: 4px;
+  border: 2px solid #fe5f1e;
+  padding: 2px 8px;
+  margin-right: 12px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+@media (max-width: 767px) {
+  .header__logout {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 554px) {
+  .header__logout {
+    font-size: 12px;
+  }
+}
+
+.header__logout:hover {
+  border: 2px solid #7b7b7b;
+}
+
 .button {
   display: inline-block;
   background-color: #fe5f1e;

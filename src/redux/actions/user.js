@@ -95,3 +95,24 @@ export const loginUser = (login, password) => {
 		}
 	};
 };
+
+export const logoutUser = (token) => {
+	return async dispatch => {
+		try {
+			const response = await axios.post('https://whispering-river-85355.herokuapp.com/api/users/logout', {
+				headers: {
+					'Authorization': `token ${token}`
+				}
+			}).catch(e => {
+				throw e;
+			});
+
+			console.log('loguot response >>', response);
+
+
+		} catch (err) {
+			console.log('error in log out >>', err);
+
+		}
+	}
+}

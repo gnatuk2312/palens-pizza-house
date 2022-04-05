@@ -11,11 +11,11 @@ const AuthView = () => {
 		setCurrentForm(e.target.textContent);
 	};
 
-	const token = useSelector((state) => {
-		return state.user.token;
+	const user = useSelector((state) => {
+		return state.user;
 	});
 
-	if (token) {
+	if (user.user.name) {
 		return <Redirect to="/cart" />;
 	}
 

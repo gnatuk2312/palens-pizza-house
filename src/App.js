@@ -19,8 +19,8 @@ function App() {
 	useEffect(() => {
 		localStorage.setItem('order', JSON.stringify(store.cart.order));
 		localStorage.setItem('amount', JSON.stringify(store.cart.amount));
+		localStorage.setItem('token', JSON.stringify(store.user.token));
 	}, [store]);
-
 
 	const dispatch = useDispatch();
 

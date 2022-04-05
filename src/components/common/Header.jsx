@@ -17,8 +17,12 @@ const Header = () => {
 					<img width="38" src={logo} alt="Pizza logo" />
 					<div>
 						<a href='/'><h1>Palen`s PizzaHouse</h1></a>
-						{(name || surname) ?
-							<p className='header__text'>Вітаємо на сайті, {name} {surname}</p> :
+						{(name || surname) ? (
+							<div className='header__account'>
+								<p className='header__account-name '>{name} {surname}</p>
+								<button className='header__logout'>Вийти</button>
+							</div>
+						) :
 							<NavLink className='header__text' to='/auth'>Увійдіть або Зареєструйтесь</NavLink>}
 					</div>
 				</div>
