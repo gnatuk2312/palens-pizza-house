@@ -98,10 +98,11 @@ export const loginUser = (login, password) => {
 
 export const logoutUser = (token) => {
 	return async dispatch => {
+		console.log('token >>', token);
 		try {
-			const response = await axios.post('https://whispering-river-85355.herokuapp.com/api/users/logout', {
+			const response = await axios.post('https://whispering-river-85355.herokuapp.com/api/users/logout', {}, {
 				headers: {
-					'Authorization': `token ${token}`
+					'Authorization': `Bearer ${token}`
 				}
 			}).catch(e => {
 				throw e;
