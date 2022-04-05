@@ -10,11 +10,11 @@ const CartView = () => {
 	const order = useSelector(state => {
 		return state.cart.order;
 	});
-	const token = useSelector(state => {
-		return state.user.token;
+	const user = useSelector(state => {
+		return state.user;
 	});
 
-	if (!token) {
+	if (!user.user.name) {
 		return <Redirect to="/auth" />;
 	}
 	return (

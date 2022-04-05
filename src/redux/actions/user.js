@@ -1,6 +1,6 @@
 import axios from "axios";
 import toast from "react-hot-toast";
-import { SET_USER } from '../types';
+import { SET_USER, DELETE_USER } from '../types';
 
 export const registerUser = (name, surname, login, password) => {
 	return async dispatch => {
@@ -95,3 +95,29 @@ export const loginUser = (login, password) => {
 		}
 	};
 };
+
+export const logoutUser = (token) => {
+	return async dispatch => {
+		console.log('token >>', token);
+		try {
+			const response = await axios.post('https://whispering-river-85355.herokuapp.com/api/users/logout', {}, {
+				headers: {
+					'Authorization': `Bearer ${token}`
+				}
+			}).catch(e => {
+				throw e;
+			});
+
+			if (response.status === 204) {
+				dispatch({ type: DELETE_USER })
+			}
+			toast.success('Ви успішно вийшли з аккаунта');
+			console.log('loguot response >>', response);
+
+
+		} catch (err) {
+			toast.error('Не вдалось вийти з аккаунта')
+			console.log('error in logout >>', err);
+		}
+	}
+}

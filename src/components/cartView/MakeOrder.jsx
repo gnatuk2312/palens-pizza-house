@@ -34,7 +34,7 @@ const MakeOrder = (props) => {
 				<div onClick={handleClose} className="close"></div>
 				<div className='order-top'>Palen`s PizzaHouse</div>
 				<form onSubmit={handleSubmit} className="order-form">
-					<h3 className='order-text'>Дякуємо що обрали нашу піцерію, Гнат! Залиште свій номер щоб наш кур'єр зміг зв'язатись з вами...</h3>
+					<h3 className='order-text'>Дякуємо що обрали нашу піцерію, {state.user.user.name}! Залиште свій номер щоб наш кур'єр зміг зв'язатись з вами...</h3>
 					<input
 						onChange={e => phone.onChange(e)}
 						onBlur={e => phone.onBlur(e)}
