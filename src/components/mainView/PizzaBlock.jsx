@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from 'prop-types';
 import { CSSTransition } from "react-transition-group";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/actions/cart";
@@ -71,4 +72,18 @@ const PizzaBlock = ({ pizza, amount }) => {
 		</article>
 	);
 };
+
+PizzaBlock.propTypes = {
+	pizza: PropTypes.shape({
+		addition: PropTypes.array,
+		category: PropTypes.string,
+		description: PropTypes.string,
+		imageUrl: PropTypes.string,
+		name: PropTypes.string,
+		price: PropTypes.number,
+		_id: PropTypes.string
+	}),
+	amount: PropTypes.array
+}
+
 export default PizzaBlock;
