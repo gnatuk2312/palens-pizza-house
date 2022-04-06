@@ -10,6 +10,7 @@ import './scss/App.css';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { loadPizzas } from './redux/actions/pizza';
+import { currentUser } from './redux/actions/user';
 
 function App() {
 
@@ -26,7 +27,12 @@ function App() {
 
 	useEffect(() => {
 		dispatch(loadPizzas());
+		if (JSON.parse(localStorage.getItem('token'))) {
+			dispatch(currentUser(JSON.parse(localStorage.getItem('token'))));
+		};
 	}, [dispatch]);
+
+
 
 	return (
 		<div className="wrapper">

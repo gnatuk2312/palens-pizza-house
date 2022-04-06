@@ -23,11 +23,8 @@ export const registerUser = (name, surname, login, password) => {
 				toast.success('Ваш аккаунт успішно зареєстровано');
 			};
 
-			console.log(response);
-
 		} catch (err) {
 			const error = Number(err.message.substring(err.message.length - 3, err.message.length));
-			console.log(error);
 
 			switch (error) {
 				case 400:
@@ -69,11 +66,8 @@ export const loginUser = (login, password) => {
 				toast.success(`Вітаємо вас, ${response.data.user.name}`);
 			};
 
-			console.log(response);
-
 		} catch (err) {
 			const error = Number(err.message.substring(err.message.length - 3, err.message.length));
-			console.log(error);
 
 			switch (error) {
 				case 400:
@@ -98,7 +92,6 @@ export const loginUser = (login, password) => {
 
 export const logoutUser = (token) => {
 	return async dispatch => {
-		console.log('token >>', token);
 		try {
 			const response = await axios.post('https://whispering-river-85355.herokuapp.com/api/users/logout', {}, {
 				headers: {
@@ -112,12 +105,31 @@ export const logoutUser = (token) => {
 				dispatch({ type: DELETE_USER })
 			}
 			toast.success('Ви успішно вийшли з аккаунта');
-			console.log('loguot response >>', response);
 
 
 		} catch (err) {
 			toast.error('Не вдалось вийти з аккаунта')
-			console.log('error in logout >>', err);
+		}
+	};
+};
+
+export const currentUser = (token) => {
+	return async dispatch => {
+		try {
+			const response = await axios.post('https://whispering-river-85355.herokuapp.com/api/users/current', {}, {
+				headers: {
+					'Authorization': `Bearer ${token}`
+				}
+			})
+			dispatch({
+				type: SET_USER,
+				payload: response.data
+			});
+
+			toast.success(`З поверненням, ${response.data.user.name}!`);
+
+		} catch (err) {
+			console.log(err);
 		}
 	}
 }
