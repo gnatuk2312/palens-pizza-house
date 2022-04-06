@@ -7,8 +7,6 @@ const initialState = {
 
 export const pizza = (state = initialState, action) => {
 
-	console.log('reducer>>', action);
-
 	switch (action.type) {
 		case LOAD_ALL_PIZZAS:
 			return {

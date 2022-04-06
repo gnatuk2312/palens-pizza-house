@@ -23,11 +23,8 @@ export const registerUser = (name, surname, login, password) => {
 				toast.success('Ваш аккаунт успішно зареєстровано');
 			};
 
-			console.log(response);
-
 		} catch (err) {
 			const error = Number(err.message.substring(err.message.length - 3, err.message.length));
-			console.log(error);
 
 			switch (error) {
 				case 400:
@@ -69,11 +66,8 @@ export const loginUser = (login, password) => {
 				toast.success(`Вітаємо вас, ${response.data.user.name}`);
 			};
 
-			console.log(response);
-
 		} catch (err) {
 			const error = Number(err.message.substring(err.message.length - 3, err.message.length));
-			console.log(error);
 
 			switch (error) {
 				case 400:
@@ -111,12 +105,10 @@ export const logoutUser = (token) => {
 				dispatch({ type: DELETE_USER })
 			}
 			toast.success('Ви успішно вийшли з аккаунта');
-			console.log('loguot response >>', response);
 
 
 		} catch (err) {
 			toast.error('Не вдалось вийти з аккаунта')
-			console.log('error in logout >>', err);
 		}
 	};
 };
