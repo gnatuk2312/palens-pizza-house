@@ -10,6 +10,7 @@ import './scss/App.css';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { loadPizzas } from './redux/actions/pizza';
+import { currentUser } from './redux/actions/user';
 
 function App() {
 
@@ -26,6 +27,9 @@ function App() {
 
 	useEffect(() => {
 		dispatch(loadPizzas());
+		if (store.user.token) {
+			dispatch(currentUser(store.user.token));
+		};
 	}, [dispatch]);
 
 	return (

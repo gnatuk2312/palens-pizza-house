@@ -98,7 +98,6 @@ export const loginUser = (login, password) => {
 
 export const logoutUser = (token) => {
 	return async dispatch => {
-		console.log('token >>', token);
 		try {
 			const response = await axios.post('https://whispering-river-85355.herokuapp.com/api/users/logout', {}, {
 				headers: {
@@ -118,6 +117,27 @@ export const logoutUser = (token) => {
 		} catch (err) {
 			toast.error('Не вдалось вийти з аккаунта')
 			console.log('error in logout >>', err);
+		}
+	};
+};
+
+export const currentUser = (token) => {
+	return async dispatch => {
+		try {
+			const response = await axios.post('https://whispering-river-85355.herokuapp.com/api/users/current', {}, {
+				headers: {
+					'Authorization': `Bearer ${token}`
+				}
+			})
+			dispatch({
+				type: SET_USER,
+				payload: response.data
+			});
+
+			toast.success(`З поверненням, ${response.data.user.name}!`);
+
+		} catch (err) {
+			console.log(err);
 		}
 	}
 }
