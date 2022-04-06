@@ -55,7 +55,6 @@ export const makeOrder = (number, name, surname, total, order) => {
 		total,
 		order
 	};
-	console.log(formData);
 
 	return async dispatch => {
 		try {

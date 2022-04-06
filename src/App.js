@@ -27,8 +27,8 @@ function App() {
 
 	useEffect(() => {
 		dispatch(loadPizzas());
-		if (store.user.token) {
-			dispatch(currentUser(store.user.token));
+		if (JSON.parse(localStorage.getItem('token'))) {
+			dispatch(currentUser(JSON.parse(localStorage.getItem('token'))));
 		};
 	}, [dispatch]);
 
