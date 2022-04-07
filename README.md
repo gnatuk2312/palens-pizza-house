@@ -1,6 +1,4 @@
-# Palen`s Pizza House
----
-## The best webiste for best pizzeria
+# [Palen`s Pizza House](https://palens-pizzahouse.netlify.app)
 ---
 ## Petty description
 ### It`s React.js project that provides an opportunity for user to:
