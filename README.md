@@ -1,5 +1,4 @@
-# Palen`s Pizza House [ #### link ](https://palens-pizzahouse.netlify.app)
----
+# Palen`s Pizza House
 ## Petty description
 ### It`s React.js project that provides an opportunity for user to:
 ---
@@ -8,7 +7,7 @@
 * add staff to cart and manage it (increment|decrement amount, delete it, clear the whole cart)
 * make an order by entering phone number (all information about order sends to database)
 ---
-Pizza House has its own Back-End (created by [friend of mine](https://github.com/Vladosik12333))
+[ Pizza House ](https://palens-pizzahouse.netlify.app) has its own Back-End (created by [friend of mine](https://github.com/Vladosik12333))
 ---
 ### Technologies | skills | feautures used here:
 * React
