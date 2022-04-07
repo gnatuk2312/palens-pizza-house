@@ -1,6 +1,6 @@
 # Palen`s Pizza House
 ## Petty description
-### It`s React.js project that provides an opportunity for user to:
+### React/Redux project that provides an opportunity for user to:
 ---
 * watch list of pizzas, drinks, desserts (loaded from database)
 * create own account (with further possibility of logOut and logIn again)
