@@ -1,4 +1,4 @@
-# [Palen`s Pizza House](https://palens-pizzahouse.netlify.app)
+# Palen`s Pizza House [ #### link ](https://palens-pizzahouse.netlify.app)
 ---
 ## Petty description
 ### It`s React.js project that provides an opportunity for user to:
@@ -21,6 +21,7 @@ Pizza House has its own Back-End (created by [friend of mine](https://github.com
 * React-hot-toast
 * Jira
 * Git
-* **Passion & Love** 
+* **Passion & Love**
+### Duration of developing - 18 days 
 
 
