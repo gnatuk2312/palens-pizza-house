@@ -23,8 +23,11 @@
 * **Passion & Love**
 ### Contacts:
 Telegram: @gnatuk2312
+
 Instagram: [gnat_liashenko](https://www.instagram.com/gnat_liashenko/)
-Email: <hnat.liashenko@gmail.com>
+
+Email: hnat.liashenko@gmail.com
+
 ### Duration of developing - 18 days 
 
 
