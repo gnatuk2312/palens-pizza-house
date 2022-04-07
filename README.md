@@ -2,8 +2,8 @@
 ---
 ## The best webiste for best pizzeria
 ---
-### Petty description
-It`s React.js project that provides an opportunity for user to:
+## Petty description
+### It`s React.js project that provides an opportunity for user to:
 ---
 * watch list of pizzas, drinks, desserts (loaded from database)
 * create own account (with further possibility of logOut and logIn again)
@@ -12,7 +12,7 @@ It`s React.js project that provides an opportunity for user to:
 ---
 Pizza House has its own Back-End (created by [friend of mine](https://github.com/Vladosik12333))
 ---
-### Technology | skills | feautures used here:
+### Technologies | skills | feautures used here:
 * React
 * Redux
 * Redux-thunk
@@ -21,6 +21,8 @@ Pizza House has its own Back-End (created by [friend of mine](https://github.com
 * Prop-types
 * React-transition-group
 * React-hot-toast
-* **Passion & Love**
+* Jira
+* Git
+* **Passion & Love** 
 
 
